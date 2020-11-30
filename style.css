@@ -89,3 +89,9 @@ h3 {
     background-color: #FFF3EC;
 }
 
+/*.btn[:disabled]: hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform:none;
+}*/
+

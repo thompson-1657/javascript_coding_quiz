@@ -1,0 +1,17 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    border: 0.1rem solid #F87595;
+    background-color: #FFEED5;
+}
+
+.choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: #F87595;
+    color: #FFEED5;
+}
+
+.choice-text {
+    padding: 1.5rem;
+}
