@@ -2,7 +2,7 @@ var question = document.getElementById("question");
 var choices = Array.from(document.getElementsByClassName("choice-text"));
 
 var currentQuestion = {};
-var acceptingAnswers = true;
+var acceptingAnswers = false;
 var score = 0;
 var questionCounter = 0;
 var availableQuestions = [];
@@ -52,12 +52,46 @@ var questions = [
 
 ]
 
-var correctAnswer = 1;
-//var maxQuestions = 5;
+const CORRECT_BONUS = 10;
+const MAX_QUESTIONS = 3;
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuestions = ["In which HTML element do we put the JavaScript?", "The condition in an if/else statement is enclosed within ______.", "Arrays in JavaScript can be used to store ______.", "String values must be enclosed within ______ when being assigned to variables.", "Commonly used data types DO NOT include:"]
-    console.log(availableQuestions)
-}
+    availableQuesions = [...questions];
+    getNewQuestion();
+};
+
+getNewQuestion = () => {
+    if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        //go to the end page
+        return window.location.assign('/end.html');
+    }
+    questionCounter++;
+    const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+    currentQuestion = availableQuesions[questionIndex];
+    question.innerText = currentQuestion.question;
+
+    choices.forEach((choice) => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestion['choice' + number];
+    });
+
+    availableQuesions.splice(questionIndex, 1);
+    acceptingAnswers = true;
+};
+
+choices.forEach((choice) => {
+    choice.addEventListener('click', (e) => {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+        getNewQuestion();
+
+    });
+});
+
+startGame();
+
