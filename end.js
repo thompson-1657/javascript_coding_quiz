@@ -17,7 +17,7 @@ saveHighScore = (e) => {
     e.preventDefault();
 
     var score = {
-        score: (Math.random() * 100),
+        score: mostRecentScore,
         name: username.value
     };
     highScores.push(score);
