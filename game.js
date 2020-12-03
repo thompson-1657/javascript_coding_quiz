@@ -136,9 +136,9 @@ function startTimer(duration, display) {
 }
 
 window.onload = function () {
-    var fiveMinutes = 60 * 1.25,
+    var quizTimeDisplay = 60 * 1.25,
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(quizTimeDisplay, display);
 };
 
 

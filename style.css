@@ -110,3 +110,12 @@ input::placeholder{
     color: #E8B4B8;
     text-align: center;
 }
+
+header {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: #F87595;
+    font-weight: bold;
+
+}
