@@ -116,8 +116,6 @@ incrementScore = num => {
 };
 
 
-//var time = 75;
-//var timeText = document.getElementById('time');
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -131,18 +129,43 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = 0;
+            return window.location.assign('end.html');
         }
     }, 1000);
+
 }
 
 window.onload = function () {
     var quizTimeDisplay = 60 * 1.25,
         display = document.querySelector('#time');
     startTimer(quizTimeDisplay, display);
+
 };
+//if selected answer is incorrect
+//then subtract 10 sec of time
 
-
-//delete chunks of time for wrong answers
 //end game upon zeroed out time
+
+
+
 startGame();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
