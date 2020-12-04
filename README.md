@@ -26,6 +26,9 @@ Lastly, the user has the ability to check the high score page to see where their
 Designing this application was quite challenging. It incorporated using html, css, and javascript. Through javascript I had to manipulate the DOM to react to user interaction. This application was a good practice in setting up a well rounded, multifunctional application. Many different aspects had to be assesed throughout the process of builing the web page. This will add great value in creating future applications!
 
 
+Link to the completed application: https://thompson-1657.github.io/javascript_coding_quiz/
+
+
 
 Code adapted from James Q Quick YouTube example:
 https://www.youtube.com/watch?v=u98ROZjBWy8&list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx&index=1
