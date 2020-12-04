@@ -67,7 +67,6 @@ startGame = () => {
 getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem("mostRecentScore", score);
-        //go to the end page
         return window.location.assign('end.html');
     }
     questionCounter++;
@@ -84,7 +83,9 @@ getNewQuestion = () => {
 
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
+
 };
+
 
 choices.forEach((choice) => {
     choice.addEventListener('click', (e) => {
@@ -115,7 +116,6 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 
-
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -129,11 +129,13 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = 0;
+
             return window.location.assign('end.html');
         }
     }, 1000);
 
 }
+console.log()
 
 window.onload = function () {
     var quizTimeDisplay = 60 * 1.25,
@@ -141,12 +143,6 @@ window.onload = function () {
     startTimer(quizTimeDisplay, display);
 
 };
-//if selected answer is incorrect
-//then subtract 10 sec of time
-
-//end game upon zeroed out time
-
-
 
 startGame();
 
